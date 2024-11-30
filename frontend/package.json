@@ -1,0 +1,17 @@
+{
+    "name": "donut-frontend",
+    "version": "1.0.0",
+    "description": "Frontend for donut fun facts",
+    "main": "index.js",
+    "homepage": "https://<struggyyy>.github.io/<DevOpsProject>",
+    "scripts": {
+      "start": "webpack-dev-server --open",
+      "build": "webpack --mode production"
+    },
+    "dependencies": {
+      "webpack": "^5.0.0",
+      "webpack-cli": "^4.0.0",
+      "webpack-dev-server": "^4.0.0"
+    }
+  }
+  

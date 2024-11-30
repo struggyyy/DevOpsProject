@@ -16,3 +16,15 @@ pre{
     justify-content: center;
     height: 100%;
 }
+
+.fun-fact {
+    color: orange;
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.fun-fact:hover {
+    color: #ffcc00;
+}

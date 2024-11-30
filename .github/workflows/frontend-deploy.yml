@@ -9,6 +9,8 @@ on:
       - compose-branch
 
 jobs:
+  permissions:
+    contents: write
   build-and-deploy:
     runs-on: ubuntu-latest
 

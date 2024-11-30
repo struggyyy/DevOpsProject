@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "Frontend for donut fun facts",
     "main": "index.js",
-    "homepage": "https://<struggyyy>.github.io/<DevOpsProject>",
+    "homepage": "https://struggyyy.github.io/DevOpsProject",
     "scripts": {
       "start": "webpack-dev-server --open",
       "build": "webpack --mode production"

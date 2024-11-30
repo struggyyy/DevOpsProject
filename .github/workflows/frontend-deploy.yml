@@ -3,44 +3,39 @@ name: Frontend Deploy to GitHub Pages
 on:
   push:
     branches:
-      - compose-branch
+      - compose-branch  # Trigger on pushes to the compose-branch
   pull_request:
     branches:
-      - compose-branch
+      - compose-branch  # Trigger on pull requests to the compose-branch
 
 permissions:
-  contents: write
+  contents: write  # Required for pushing to GitHub Pages
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v3  # Checkout the repository
 
     - name: Set up Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v3  # Set up Node.js for the frontend build
       with:
-        node-version: 16
-
-    - name: Install Docker Compose
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y docker-compose
+        node-version: 16  # Use Node.js version 16
 
     - name: Install dependencies
       run: |
-        cd frontend
-        npm install
+        cd frontend  # Change to the frontend directory
+        npm install  # Install the frontend dependencies
 
     - name: Build frontend
       run: |
-        cd frontend
-        npm run build
+        cd frontend  # Change to the frontend directory
+        npm run build  # Build the frontend
 
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v3  # Action to deploy to GitHub Pages
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./frontend/dist
+        github_token: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub token for authentication
+        publish_dir: ./frontend/dist  # Path to the build output directory (adjust if necessary)
